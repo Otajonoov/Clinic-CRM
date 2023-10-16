@@ -1,0 +1,2959 @@
+definitions:
+  models.AnalysisReqModel:
+    properties:
+      analysis_url:
+        type: string
+      aparat_id:
+        type: string
+      client_id:
+        type: integer
+    type: object
+  models.AnalysisRespModel:
+    properties:
+      analysis_url:
+        type: string
+      aparat_id:
+        type: string
+      client_id:
+        type: integer
+      created_at:
+        type: string
+      id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.AparatModelResp:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      sub_category_id:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.AparatsResp:
+    properties:
+      aparats:
+        items:
+          $ref: '#/definitions/models.AparatModelResp'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.CashboxPrinterResp:
+    properties:
+      cash_count:
+        type: integer
+      created_at:
+        type: string
+      doctor_name:
+        type: string
+      first_name:
+        type: string
+      image_url:
+        type: string
+      last_name:
+        type: string
+      room_number:
+        type: string
+      service_type:
+        type: string
+      summa:
+        type: integer
+    type: object
+  models.CashboxResp:
+    properties:
+      aparats_ids:
+        items:
+          type: string
+        type: array
+      cash_count:
+        type: integer
+      client_id:
+        type: integer
+      created_at:
+        type: string
+      doctors_ids:
+        items:
+          type: string
+        type: array
+      id:
+        type: string
+      is_payed:
+        type: boolean
+      labs_ids:
+        items:
+          type: string
+        type: array
+      summa:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  models.CashboxesPrinterResp:
+    properties:
+      cashboxes:
+        items:
+          $ref: '#/definitions/models.CashboxPrinterResp'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.CategoriesResp:
+    properties:
+      category:
+        items:
+          $ref: '#/definitions/models.CategoryModelResp'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.CategoryModel:
+    properties:
+      name:
+        type: string
+    type: object
+  models.CategoryModelResp:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.CreateAparat:
+    properties:
+      name:
+        type: string
+      price:
+        type: number
+      sub_category_id:
+        type: string
+      type:
+        type: string
+    type: object
+  models.CreateCashboxReq:
+    properties:
+      aparats_ids:
+        items:
+          type: string
+        type: array
+      client_id:
+        type: integer
+      doctors_ids:
+        items:
+          type: string
+        type: array
+      is_payed:
+        type: boolean
+      labs_ids:
+        items:
+          type: string
+        type: array
+      payment_type:
+        type: string
+    type: object
+  models.CreateDoctorModel:
+    properties:
+      first_name:
+        type: string
+      gender:
+        type: string
+      last_name:
+        type: string
+      phone_number:
+        type: string
+      price:
+        type: number
+      room_number:
+        type: string
+      specialty:
+        type: string
+      work_time:
+        type: string
+    type: object
+  models.CreatePatientModel:
+    properties:
+      advertising_chanel:
+        type: string
+      condition:
+        type: string
+      date_of_birth:
+        type: string
+      discount:
+        type: string
+      district:
+        type: string
+      doctor_id:
+        type: string
+      first_name:
+        type: string
+      gender:
+        type: string
+      last_name:
+        type: string
+      main_phone_number:
+        type: string
+      other_phone_number:
+        type: string
+      passport_info:
+        type: string
+      patronomic:
+        type: string
+      region:
+        type: string
+      respublic:
+        type: string
+    type: object
+  models.CreatePatientQueueReq:
+    properties:
+      client_id:
+        type: integer
+      service_id:
+        type: string
+      service_type:
+        type: string
+    type: object
+  models.CreatePaymentHistoryReq:
+    properties:
+      cashbox_id:
+        type: string
+      client_id:
+        type: integer
+      payment_type:
+        type: string
+      summa:
+        type: integer
+    type: object
+  models.DefaultResponse:
+    properties:
+      error_code:
+        type: integer
+      error_message:
+        type: string
+    type: object
+  models.DocPageFilterResModel:
+    properties:
+      patientInfo:
+        items:
+          $ref: '#/definitions/models.PatientInfo'
+        type: array
+    type: object
+  models.DoctorReportsModel:
+    properties:
+      client_id:
+        type: string
+      doctor_id:
+        type: string
+      text:
+        type: string
+    type: object
+  models.DoctorReportsModelRes:
+    properties:
+      client_id:
+        type: string
+      created_at:
+        type: string
+      doctor_id:
+        type: string
+      id:
+        type: string
+      text:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.DoctorReportsResp:
+    properties:
+      count:
+        type: integer
+      reports:
+        items:
+          $ref: '#/definitions/models.DoctorReportsModelRes'
+        type: array
+    type: object
+  models.DoctorResp:
+    properties:
+      created_at:
+        type: string
+      first_name:
+        type: string
+      gender:
+        type: string
+      id:
+        type: string
+      last_name:
+        type: string
+      phone_number:
+        type: string
+      price:
+        type: number
+      room_number:
+        type: string
+      specialty:
+        type: string
+      updated_at:
+        type: string
+      work_time:
+        type: string
+    type: object
+  models.DoctorType:
+    properties:
+      doctor_type:
+        type: string
+    type: object
+  models.DoctorTypes:
+    properties:
+      count:
+        type: integer
+      doctor_types:
+        items:
+          $ref: '#/definitions/models.DoctorType'
+        type: array
+    type: object
+  models.DoctorsResp:
+    properties:
+      count:
+        type: integer
+      doctors:
+        items:
+          $ref: '#/definitions/models.DoctorResp'
+        type: array
+    type: object
+  models.FindCashboxResp:
+    properties:
+      cashboxes:
+        items:
+          $ref: '#/definitions/models.CashboxResp'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.LabModel:
+    properties:
+      name:
+        type: string
+      price:
+        type: number
+      sub_category_id:
+        type: string
+      type:
+        type: string
+    type: object
+  models.LabModelResp:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      sub_category_id:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.LabsResp:
+    properties:
+      count:
+        type: integer
+      labs:
+        items:
+          $ref: '#/definitions/models.LabModelResp'
+        type: array
+    type: object
+  models.LowStocksRespModel:
+    properties:
+      count:
+        type: integer
+      low_stocks:
+        items:
+          $ref: '#/definitions/models.SqladRespModel'
+        type: array
+    type: object
+  models.MediaResponse:
+    properties:
+      body:
+        $ref: '#/definitions/models.UploadPhotoRes'
+      error_code:
+        type: integer
+      error_message:
+        type: string
+    type: object
+  models.PatientInfo:
+    properties:
+      date_last_visit:
+        type: string
+      full_name:
+        type: string
+      patientReports:
+        items:
+          $ref: '#/definitions/models.DoctorReportsModelRes'
+        type: array
+      phone_number:
+        type: string
+      queue_number:
+        type: integer
+    type: object
+  models.PatientModel:
+    properties:
+      advertising_chanel:
+        type: string
+      clientId:
+        type: integer
+      condition:
+        type: string
+      created_at:
+        type: string
+      date_of_birth:
+        type: string
+      discount:
+        type: string
+      district:
+        type: string
+      doctor_id:
+        type: string
+      first_name:
+        type: string
+      gender:
+        type: string
+      id:
+        type: string
+      last_name:
+        type: string
+      main_phone_number:
+        type: string
+      other_phone_number:
+        type: string
+      passport_info:
+        type: string
+      patronomic:
+        type: string
+      region:
+        type: string
+      respublic:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.PatientQueueResp:
+    properties:
+      client_id:
+        type: integer
+      created_at:
+        type: string
+      id:
+        type: string
+      queue_number:
+        type: integer
+      service_id:
+        type: string
+      service_type:
+        type: string
+      turn_passed:
+        type: boolean
+      updated_at:
+        type: string
+    type: object
+  models.PatientsResp:
+    properties:
+      count:
+        type: integer
+      patients:
+        items:
+          $ref: '#/definitions/models.PatientModel'
+        type: array
+    type: object
+  models.PaymentHistoriesResp:
+    properties:
+      count:
+        type: integer
+      payment_histories:
+        items:
+          $ref: '#/definitions/models.PaymentHistoryResp'
+        type: array
+    type: object
+  models.PaymentHistoryResp:
+    properties:
+      cashbox_id:
+        type: string
+      client_id:
+        type: integer
+      created_at:
+        type: string
+      id:
+        type: string
+      payment_type:
+        type: string
+      summa:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  models.QueueNumber:
+    properties:
+      queue_number:
+        type: integer
+    type: object
+  models.QueuesResp:
+    properties:
+      count:
+        type: integer
+      queues:
+        items:
+          $ref: '#/definitions/models.PatientQueueResp'
+        type: array
+    type: object
+  models.ResponseError:
+    properties:
+      message:
+        type: string
+    type: object
+  models.ResponseOK:
+    properties:
+      message:
+        type: string
+    type: object
+  models.SqladReqModel:
+    properties:
+      count:
+        type: integer
+      expiration_date:
+        type: string
+      low_stock:
+        type: integer
+      name:
+        type: string
+      price:
+        type: number
+      provider:
+        type: string
+    type: object
+  models.SqladRespModel:
+    properties:
+      count:
+        type: integer
+      created_at:
+        type: string
+      expiration_date:
+        type: string
+      id:
+        type: string
+      low_stock:
+        type: integer
+      name:
+        type: string
+      price:
+        type: number
+      provider:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.SubCategoriesResp:
+    properties:
+      category:
+        items:
+          $ref: '#/definitions/models.SubCategoryResModel'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.SubCategoryModel:
+    properties:
+      category_id:
+        type: string
+      name:
+        type: string
+    type: object
+  models.SubCategoryResModel:
+    properties:
+      category_id:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.UpdateAparat:
+    properties:
+      name:
+        type: string
+      price:
+        type: number
+      type:
+        type: string
+    type: object
+  models.UpdateCashboxReq:
+    properties:
+      id:
+        type: string
+      is_payed:
+        type: boolean
+      payment_type:
+        type: string
+    type: object
+  models.UpdateQueueReq:
+    properties:
+      client_id:
+        type: integer
+      service_id:
+        type: string
+      service_type:
+        type: string
+    type: object
+  models.UpdateSubCategory:
+    properties:
+      name:
+        type: string
+    type: object
+  models.UploadPhotoRes:
+    properties:
+      photo_url:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is MedicalCRM server api. Created by Otajonov Quvonchbek
+  termsOfService: 1 term MedicalCRM
+  title: MedicalCRM api
+  version: "1.0"
+paths:
+  /v1/aparat-analysis-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr Aparat analysis
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.AnalysisReqModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.AnalysisRespModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Aparat analysis
+      tags:
+      - Aparat analysis
+  /v1/aparat-analysis-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete Aparat analysis
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete Aparat analysis
+      tags:
+      - Aparat analysis
+  /v1/aparat-analysis-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get Aparat analysis
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnalysisRespModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Aparat analysis
+      tags:
+      - Aparat analysis
+  /v1/aparat-category-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr aparat categoty
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CategoryModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.CategoryModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create aparat category
+      tags:
+      - Aparat Category
+  /v1/aparat-category-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete aparat category
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete aparat category
+      tags:
+      - Aparat Category
+  /v1/aparat-category-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find aparat categories
+      parameters:
+      - in: query
+        name: category_id
+        type: string
+      - default: 10
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        in: query
+        name: page
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoriesResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find aparat category
+      tags:
+      - Aparat Category
+  /v1/aparat-category-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get aparat category
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoryModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get aparat category
+      tags:
+      - Aparat Category
+  /v1/aparat-category-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update aparat catigory
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CategoryModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoryModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update aparat category
+      tags:
+      - Aparat Category
+  /v1/aparat-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr aparat
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateAparat'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.AparatModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create aparat
+      tags:
+      - Aparat
+  /v1/aparat-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete lab
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete aparat
+      tags:
+      - Aparat
+  /v1/aparat-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find labs
+      parameters:
+      - default: 10
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        in: query
+        name: page
+        required: true
+        type: integer
+      - in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AparatsResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find aparat
+      tags:
+      - Aparat
+  /v1/aparat-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get lab
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AparatModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get aparat
+      tags:
+      - Aparat
+  /v1/aparat-sub-category-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr Aparat sub category create
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.SubCategoryModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.SubCategoryResModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Aparat sub category
+      tags:
+      - Aparat sub category
+  /v1/aparat-sub-category-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete Aparat sub category
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete Aparat sub category
+      tags:
+      - Aparat sub category
+  /v1/aparat-sub-category-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find Aparat sub categories
+      parameters:
+      - in: query
+        name: category_id
+        type: string
+      - default: 10
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        in: query
+        name: page
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SubCategoriesResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find Aparat sub category
+      tags:
+      - Aparat sub category
+  /v1/aparat-sub-category-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get Aparat sub category create
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SubCategoryResModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Aparat sub category
+      tags:
+      - Aparat sub category
+  /v1/aparat-sub-category-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update Aparat sub category
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateSubCategory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoryModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update Aparat sub category
+      tags:
+      - Aparat sub category
+  /v1/aparat-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update lab
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateAparat'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AparatModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update aparat
+      tags:
+      - Aparat
+  /v1/cashbo-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find cashbox
+      parameters:
+      - in: query
+        name: client_id
+        type: integer
+      - in: query
+        name: from_date
+        type: string
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: search
+        type: string
+      - in: query
+        name: to_date
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FindCashboxResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find cashbox
+      tags:
+      - Cashbox
+  /v1/cashbox-create:
+    post:
+      consumes:
+      - application/json
+      description: create cashbox
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateCashboxReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.CashboxResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: create cashbox
+      tags:
+      - Cashbox
+  /v1/cashbox-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete cashbox
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete cashbox
+      tags:
+      - Cashbox
+  /v1/cashbox-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get patient queue
+      parameters:
+      - in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CashboxResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: get patient cashbox
+      tags:
+      - Cashbox
+  /v1/cashbox-print:
+    get:
+      consumes:
+      - application/json
+      description: This api can get patient queue
+      parameters:
+      - in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CashboxesPrinterResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: get patient cashbox print
+      tags:
+      - Cashbox
+  /v1/cashbox-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update cashbox
+      parameters:
+      - description: UpdatePatientModel
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateCashboxReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CashboxResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: update cashbox
+      tags:
+      - Cashbox
+  /v1/doctor-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr doctor
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateDoctorModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.DoctorResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create doctor
+      tags:
+      - Doctor
+  /v1/doctor-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete doctor
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete doctor
+      tags:
+      - Doctor
+  /v1/doctor-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find doctors
+      parameters:
+      - default: 10
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        in: query
+        name: page
+        required: true
+        type: integer
+      - in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DoctorsResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find doctors
+      tags:
+      - Doctor
+  /v1/doctor-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get doctor
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DoctorResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get doctor
+      tags:
+      - Doctor
+  /v1/doctor-page-filter:
+    get:
+      consumes:
+      - application/json
+      description: This api can get doctor page
+      parameters:
+      - in: query
+        name: client_id
+        type: integer
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: service_id
+        type: string
+      - in: query
+        name: service_type
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DocPageFilterResModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get patients info for doctor page
+      tags:
+      - Doctor-page
+  /v1/doctor-report-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr doctor report
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.DoctorReportsModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.DoctorReportsModelRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create doctor report
+      tags:
+      - Doctor-report
+  /v1/doctor-report-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete doctor
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete doctor report
+      tags:
+      - Doctor-report
+  /v1/doctor-report-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find doctors
+      parameters:
+      - default: 10
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        in: query
+        name: page
+        required: true
+        type: integer
+      - in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DoctorReportsResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find doctors report
+      tags:
+      - Doctor-report
+  /v1/doctor-report-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get doctor reports
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DoctorReportsModelRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get doctor report
+      tags:
+      - Doctor-report
+  /v1/doctor-type-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get doctor type
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DoctorTypes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get doctor type
+      tags:
+      - Doctor
+  /v1/doctor-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update doctor
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateDoctorModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DoctorResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update doctor
+      tags:
+      - Doctor
+  /v1/lab-analysis-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr Lab analysis
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.AnalysisReqModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.AnalysisRespModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Lab analysis
+      tags:
+      - Lab analysis
+  /v1/lab-analysis-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete Lab analysis
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete Lab analysis
+      tags:
+      - Lab analysis
+  /v1/lab-analysis-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get Lab analysis
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AnalysisRespModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Lab analysis
+      tags:
+      - Lab analysis
+  /v1/lab-category-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr lab categoty
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CategoryModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.CategoryModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create lab category
+      tags:
+      - Lab Category
+  /v1/lab-category-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete lab category
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete lab category
+      tags:
+      - Lab Category
+  /v1/lab-category-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find lab categories
+      parameters:
+      - in: query
+        name: category_id
+        type: string
+      - default: 10
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        in: query
+        name: page
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoriesResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find lab category
+      tags:
+      - Lab Category
+  /v1/lab-category-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get lab category
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoryModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get lab category
+      tags:
+      - Lab Category
+  /v1/lab-category-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update lab catigory
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CategoryModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoryModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update lab category
+      tags:
+      - Lab Category
+  /v1/lab-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr lab
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.LabModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.LabModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create lab
+      tags:
+      - Lab
+  /v1/lab-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete lab
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete lab
+      tags:
+      - Lab
+  /v1/lab-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find labs
+      parameters:
+      - default: 10
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        in: query
+        name: page
+        required: true
+        type: integer
+      - in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LabsResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find labs
+      tags:
+      - Lab
+  /v1/lab-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get lab
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LabModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get lab
+      tags:
+      - Lab
+  /v1/lab-sub-category-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr Lab sub category create
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.SubCategoryModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.SubCategoryResModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Lab sub category
+      tags:
+      - Lab sub category
+  /v1/lab-sub-category-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete Lab sub category
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete Lab sub category
+      tags:
+      - Lab sub category
+  /v1/lab-sub-category-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find lab sub categories
+      parameters:
+      - in: query
+        name: category_id
+        type: string
+      - default: 10
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        in: query
+        name: page
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SubCategoriesResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find Lab sub category
+      tags:
+      - Lab sub category
+  /v1/lab-sub-category-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get Lab sub category create
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SubCategoryResModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Lab sub category
+      tags:
+      - Lab sub category
+  /v1/lab-sub-category-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update Lab sub category
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateSubCategory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoryModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update Lab sub category
+      tags:
+      - Lab sub category
+  /v1/lab-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update lab
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.LabModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LabModelResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update lab
+      tags:
+      - Lab
+  /v1/low-stock:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a list of low stock
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LowStocksRespModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find low stochs
+      tags:
+      - Sqlad
+  /v1/media/photo/:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Through this api frontent can upload photo and get the link to
+        the media.
+      parameters:
+      - in: query
+        name: analysis_type
+        type: string
+      - in: query
+        name: phone_number
+        type: string
+      - description: File
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MediaResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/models.DefaultResponse'
+      security:
+      - BearerAuth: []
+      summary: Upload media
+      tags:
+      - Media
+  /v1/patient-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can patient registr
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreatePatientModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.PatientModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: create patient
+      tags:
+      - Patient
+  /v1/patient-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete patient
+      parameters:
+      - in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: delete patient
+      tags:
+      - Patient
+  /v1/patient-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find patient
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PatientsResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: find patients
+      tags:
+      - Patient
+  /v1/patient-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get patient
+      parameters:
+      - in: query
+        name: field
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PatientModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: get patient
+      tags:
+      - Patient
+  /v1/patient-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update patient
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: UpdatePatientModel
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreatePatientModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PatientModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: update patient
+      tags:
+      - Patient
+  /v1/payment-create:
+    post:
+      consumes:
+      - application/json
+      description: create payment history
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreatePaymentHistoryReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.PaymentHistoryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: create payment history
+      tags:
+      - Payment history
+  /v1/payment-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete payment history
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete payment history
+      tags:
+      - Payment history
+  /v1/payment-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find cashbox
+      parameters:
+      - in: query
+        name: client_id
+        type: integer
+      - in: query
+        name: from_date
+        type: string
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: to_date
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PaymentHistoriesResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find cashbox
+      tags:
+      - Payment history
+  /v1/payment-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get payment history
+      parameters:
+      - in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PaymentHistoryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: get payment history
+      tags:
+      - Payment history
+  /v1/queue-check-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can check patient queue
+      parameters:
+      - in: query
+        name: service_id
+        type: string
+      - in: query
+        name: service_type
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.QueueNumber'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: check patient queue
+      tags:
+      - Queue
+  /v1/queue-create:
+    post:
+      consumes:
+      - application/json
+      description: create patient queue
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreatePatientQueueReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.PatientQueueResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: create patient queue
+      tags:
+      - Queue
+  /v1/queue-find:
+    get:
+      consumes:
+      - application/json
+      description: This api can find patient queues
+      parameters:
+      - in: query
+        name: client_id
+        type: integer
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: service_id
+        type: string
+      - in: query
+        name: service_type
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.QueuesResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Find patient queues
+      tags:
+      - Queue
+  /v1/queue-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get patient queue
+      parameters:
+      - in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PatientQueueResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: get patient queue
+      tags:
+      - Queue
+  /v1/queue-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update patient queue
+      parameters:
+      - description: UpdatePatientModel
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateQueueReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PatientQueueResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: update patient queue
+      tags:
+      - Queue
+  /v1/sqlad-create:
+    post:
+      consumes:
+      - application/json
+      description: This api can registr sqlad product info
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.SqladReqModel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.SqladRespModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create sqlad product info
+      tags:
+      - Sqlad
+  /v1/sqlad-delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This api can delete product in sqlad
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseOK'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete sqlad info
+      tags:
+      - Sqlad
+  /v1/sqlad-get:
+    get:
+      consumes:
+      - application/json
+      description: This api can get sqlad
+      parameters:
+      - default: id
+        in: query
+        name: field
+        required: true
+        type: string
+      - in: query
+        name: value
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SqladRespModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get sqlad product info
+      tags:
+      - Sqlad
+  /v1/sqlad-update/{id}:
+    post:
+      consumes:
+      - application/json
+      description: This api can update doctor report
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.SqladReqModel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SqladRespModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update sqlad product info
+      tags:
+      - Sqlad
+swagger: "2.0"
